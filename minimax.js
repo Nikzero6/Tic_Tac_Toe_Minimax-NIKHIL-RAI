@@ -1,6 +1,5 @@
 // Tic Tac Toe AI with Minimax Algorithm
-// NIKHIL RAI (2K19/AE/039)
-// UNDER GUIDANCE OF PROF,SAURABH AGGARWAL
+// NIKHIL RAI (2K19/AE/039) and Divij Lavania (2K19/AE/023)
 // STARTING CODE:
 
 function bestMove() {
@@ -10,10 +9,10 @@ function bestMove() {
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       // Is the spot available?
-      if (board[i][j] == '') {
+      if (board[i][j] == "") {
         board[i][j] = ai;
         let score = minimax(board, 0, false);
-        board[i][j] = '';
+        board[i][j] = "";
         if (score > bestScore) {
           bestScore = score;
           move = { i, j };
@@ -28,7 +27,7 @@ function bestMove() {
 let scores = {
   X: 10,
   O: -10,
-  tie: 0
+  tie: 0,
 };
 
 function minimax(board, depth, isMaximizing) {
@@ -42,10 +41,10 @@ function minimax(board, depth, isMaximizing) {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         // Is the spot available?
-        if (board[i][j] == '') {
+        if (board[i][j] == "") {
           board[i][j] = ai;
           let score = minimax(board, depth + 1, false);
-          board[i][j] = '';
+          board[i][j] = "";
           bestScore = max(score, bestScore);
         }
       }
@@ -56,10 +55,10 @@ function minimax(board, depth, isMaximizing) {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         // Is the spot available?
-        if (board[i][j] == '') {
+        if (board[i][j] == "") {
           board[i][j] = human;
           let score = minimax(board, depth + 1, true);
-          board[i][j] = '';
+          board[i][j] = "";
           bestScore = min(score, bestScore);
         }
       }

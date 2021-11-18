@@ -1,0 +1,236 @@
+/* elements */
+body {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+canvas {
+  display: block;
+  margin: 10px auto;
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* containers */
+.bg-img {
+  background-image: url("images/background.jpg");
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.main-container {
+  padding: 1.25rem 4rem;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.rules-col {
+  padding-bottom: 0px;
+  background: transparent;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  padding: 20px 20px 5px;
+  line-height: 2;
+  text-align: justify;
+  border: solid 0.5rem;
+  border-image: linear-gradient(var(--angle), turquoise, #fd1d1d, greenyellow) 1;
+  animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.games-col {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.mob-heading {
+  display: none;
+}
+
+/* rules section */
+.sub-title {
+  padding-bottom: 20px;
+  color: crimson;
+}
+
+.rule-list {
+  padding-bottom: 10px;
+  color: #00ffe9;
+}
+
+/* game section */
+.game-col {
+  padding: 15px 30px;
+}
+
+.game-btns {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 2rem;
+  margin: 1.2rem 0.9rem;
+  border: solid 0.5rem #00ffe9;
+}
+
+.game-btns:hover {
+  box-shadow: 0 10px 20px #484848;
+}
+
+.game-btns:active {
+  box-shadow: 0 2.5px 5px #484848;
+  border-color: #fff;
+}
+
+.big-heading {
+  margin-bottom: 35px;
+  color: greenyellow;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+/* footer */
+.acknowledgement {
+  font-size: 0.3rem;
+  color: grey;
+}
+.big-header {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: darkorange;
+}
+/* media queries */
+@media only screen and (max-width: 700px) {
+  .mobile-header {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: darkorange;
+  }
+
+  .bg-img {
+    background-image: url("images/bg-mobile.jpg");
+  }
+
+  .main-container {
+    padding: 2.25rem;
+  }
+
+  .sub-title {
+    font-size: 1.5rem;
+  }
+
+  .rule-list {
+    font-size: 0.82rem;
+    text-align: right;
+  }
+
+  .rules-col {
+    margin-bottom: 3rem;
+  }
+
+  .big-heading {
+    display: none;
+  }
+
+  .mob-heading {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 35px;
+    color: greenyellow;
+    line-height: 1.5;
+  }
+
+  .clickMe {
+    color: red;
+    font-size: 1.8rem;
+  }
+
+  .clickMe:hover {
+    color: yellow;
+    box-shadow: 2px;
+  }
+
+  .clickMe:active {
+    color: white;
+  }
+
+  .game-btns {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.5rem;
+    margin: 0.8rem 0.2rem;
+  }
+}
+
+/* js css */
+.btn-click {
+  box-shadow: 0 10px 20px #484848;
+  border-color: #fff;
+  background-color: #000;
+}
+
+canvas {
+  position: absolute;
+  top: 90px;
+  margin-left: auto;
+  left: 480px;
+  padding-bottom: 0px;
+  background: transparent;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  padding: 20px 20px 5px;
+  line-height: 2;
+  text-align: justify;
+  border: solid 0.5rem;
+  border-image: linear-gradient(var(--angle), turquoise, #fd1d1d, greenyellow) 1;
+  animation: 10s rotate linear infinite;
+}
+.win-msg {
+  position: absolute;
+  top: 250px;
+  left: 120px;
+  font-size: 2rem;
+}
+button {
+  position: absolute;
+  top: 510px;
+  left: 560px;
+}
+footer {
+  position: relative;
+  bottom: -492px;
+}

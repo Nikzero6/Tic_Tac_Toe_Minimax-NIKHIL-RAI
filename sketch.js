@@ -1,30 +1,36 @@
 // Tic Tac Toe AI with Minimax Algorithm
-// NIKHIL RAI (2K19/AE/039)
-// UNDER GUIDANCE OF PROF,SAURABH AGGARWAL
+// NIKHIL RAI (2K19/AE/039) and Divij Lavania (2K19/AE/023)
 // STARTING CODE:
 
 let board = [
-  ['', '', ''],
-  ['', '', ''],
-  ['', '', '']
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""],
 ];
 
 let w; // = width / 3;
 let h; // = height / 3;
 
-let ai = 'X';
-let human = 'O';
+let ai = "X";
+let human = "O";
 let currentPlayer = human;
+
+var btn = document.getElementsByTagName("button")[0];
+btn.style.display = "none";
 
 function setup() {
   createCanvas(400, 400);
   w = width / 3;
   h = height / 3;
+  
+let random = Math.floor(Math.random() * 2);
+if (random) {
   bestMove();
+}
 }
 
 function equals3(a, b, c) {
-  return a == b && b == c && a != '';
+  return a == b && b == c && a != "";
 }
 
 function checkWinner() {
@@ -55,14 +61,14 @@ function checkWinner() {
   let openSpots = 0;
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
-      if (board[i][j] == '') {
+      if (board[i][j] == "") {
         openSpots++;
       }
     }
   }
 
   if (winner == null && openSpots == 0) {
-    return 'tie';
+    return "tie";
   } else {
     return winner;
   }
@@ -74,7 +80,7 @@ function mousePressed() {
     let i = floor(mouseX / w);
     let j = floor(mouseY / h);
     // If valid turn
-    if (board[i][j] == '') {
+    if (board[i][j] == "") {
       board[i][j] = human;
       currentPlayer = ai;
       bestMove();
@@ -111,12 +117,11 @@ function draw() {
   let result = checkWinner();
   if (result != null) {
     noLoop();
-    let resultP = createP('');
-    resultP.style('font-size', '32pt');
-    if (result == 'tie') {
-      resultP.html('Tie!');
+    btn.style.display = "block";
+    if (result == "tie") {
+      document.getElementById("msg").innerHTML = "Tie";
     } else {
-      resultP.html(`${result} wins!`);
+      document.getElementById("msg").innerHTML = `${result} wins!`;
     }
   }
 }
