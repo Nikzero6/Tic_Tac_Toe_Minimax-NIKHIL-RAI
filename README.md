@@ -1,4 +1,4 @@
-# Tic_Tac_Toe_Minimax-NIKHIL-RAI
+# Tic_Tac_Toe_Minimax-NIKHIL-RAI (Live){https://nikzero6.github.io/Tic_Tac_Toe_Minimax-NIKHIL-RAI/}
 - It is an AI tic-tac-toe which always plays a perfect game, at best an experienced player can tie with the computer but will never win because the game will be already solved in the program. 
 - For the selection of optimal move the use of minimax algorithm in game theory and calculation of evaluation function has been applied.
 
